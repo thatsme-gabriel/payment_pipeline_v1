@@ -1,0 +1,53 @@
+# Local configuration and credentials. Only the empty template is public.
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.p12
+*.pfx
+*.jks
+
+# Dependencies, caches, and local tools.
+.venv/
+.tools/
+maps/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.ruff_cache/
+*.egg-info/
+
+# Runtime state, records, exports, and temporary files.
+.state/
+/data/
+/output/
+/tmp/
+*.log
+*.sqlite
+*.sqlite3
+*.sqlite-*
+*.sqlite3-*
+*.db
+*.db-*
+
+# Terraform state, saved plans, credentials, and local overrides at any depth.
+.terraform/
+.terraformrc
+terraform.rc
+*.tfstate*
+*.tfplan
+*.tfplan.*
+*.tfvars
+*.tfvars.json
+*.tfbackend
+crash.*.log
+override.tf
+override.tf.json
+*_override.tf
+*_override.tf.json
+
+# Evidence may contain customer records, account IDs, screenshots, and billing.
+# Publish only the instructions; review/redact exports separately before sharing.
+/evidencias/*
+!/evidencias/README.md

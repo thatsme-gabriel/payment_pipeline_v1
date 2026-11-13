@@ -1,0 +1,57 @@
+{
+  "type": "record",
+  "name": "EnrichedTransaction",
+  "namespace": "com.bootcamp.payments",
+  "fields": [
+    {
+      "name": "transaction_id",
+      "type": "long"
+    },
+    {
+      "name": "account_id",
+      "type": "long"
+    },
+    {
+      "name": "card_id",
+      "type": "long",
+      "confluent:tags": [
+        "PCI"
+      ]
+    },
+    {
+      "name": "merchant_id",
+      "type": "long"
+    },
+    {
+      "name": "customer_id",
+      "type": "long",
+      "confluent:tags": [
+        "PII"
+      ]
+    },
+    {
+      "name": "amount",
+      "type": {
+        "type": "bytes",
+        "logicalType": "decimal",
+        "precision": 15,
+        "scale": 2
+      }
+    },
+    {
+      "name": "currency",
+      "type": "string"
+    },
+    {
+      "name": "account_status",
+      "type": "string"
+    },
+    {
+      "name": "occurred_at",
+      "type": {
+        "type": "long",
+        "logicalType": "timestamp-millis"
+      }
+    }
+  ]
+}

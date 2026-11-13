@@ -1,0 +1,11 @@
+{
+  "type": "record",
+  "name": "FraudKey",
+  "namespace": "com.bootcamp.payments",
+  "fields": [
+    {
+      "name": "alert_id",
+      "type": "string"
+    }
+  ]
+}

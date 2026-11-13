@@ -1,0 +1,35 @@
+[build-system]
+requires = ["setuptools>=75"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "confluent-payments-challenge"
+version = "1.0.0"
+description = "Pipeline de pagamentos Neon, Debezium, Kafka Avro e Confluent Flink"
+requires-python = ">=3.11"
+dependencies = [
+  "psycopg[binary]>=3.2,<4",
+  "confluent-kafka[avro]>=2.6,<3",
+  "fastavro>=1.9,<2",
+  "avro>=1.11,<2",
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=8,<10", "ruff>=0.9,<1"]
+
+[project.scripts]
+payments = "payments.cli:main"
+
+[tool.setuptools.packages.find]
+include = ["payments*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-q"
+
+[tool.ruff]
+line-length = 100
+target-version = "py311"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "B", "UP"]

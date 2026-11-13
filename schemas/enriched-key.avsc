@@ -1,0 +1,11 @@
+{
+  "type": "record",
+  "name": "EnrichedKey",
+  "namespace": "com.bootcamp.payments",
+  "fields": [
+    {
+      "name": "transaction_id",
+      "type": "long"
+    }
+  ]
+}

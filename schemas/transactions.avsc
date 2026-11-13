@@ -1,0 +1,50 @@
+{
+  "type": "record",
+  "name": "Transaction",
+  "namespace": "com.bootcamp.payments",
+  "fields": [
+    {
+      "name": "id",
+      "type": "long"
+    },
+    {
+      "name": "account_id",
+      "type": "long"
+    },
+    {
+      "name": "card_id",
+      "type": "long",
+      "confluent:tags": [
+        "PCI"
+      ]
+    },
+    {
+      "name": "merchant_id",
+      "type": "long"
+    },
+    {
+      "name": "amount",
+      "type": {
+        "type": "bytes",
+        "logicalType": "decimal",
+        "precision": 15,
+        "scale": 2
+      }
+    },
+    {
+      "name": "currency",
+      "type": "string"
+    },
+    {
+      "name": "status",
+      "type": "string"
+    },
+    {
+      "name": "occurred_at",
+      "type": {
+        "type": "long",
+        "logicalType": "timestamp-millis"
+      }
+    }
+  ]
+}

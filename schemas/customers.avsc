@@ -1,0 +1,35 @@
+{
+  "type": "record",
+  "name": "Customer",
+  "namespace": "com.bootcamp.payments",
+  "fields": [
+    {
+      "name": "id",
+      "type": "long",
+      "confluent:tags": [
+        "PII"
+      ]
+    },
+    {
+      "name": "name",
+      "type": "string",
+      "confluent:tags": [
+        "PII"
+      ]
+    },
+    {
+      "name": "email",
+      "type": "string",
+      "confluent:tags": [
+        "PII"
+      ]
+    },
+    {
+      "name": "document",
+      "type": "string",
+      "confluent:tags": [
+        "PII"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,52 @@
+{
+  "type": "record",
+  "name": "FraudAlert",
+  "namespace": "com.bootcamp.payments",
+  "fields": [
+    {
+      "name": "alert_id",
+      "type": "string"
+    },
+    {
+      "name": "rule_id",
+      "type": "string"
+    },
+    {
+      "name": "card_id",
+      "type": "long",
+      "confluent:tags": [
+        "PCI"
+      ]
+    },
+    {
+      "name": "first_transaction_id",
+      "type": "long"
+    },
+    {
+      "name": "second_transaction_id",
+      "type": "long"
+    },
+    {
+      "name": "last_transaction_id",
+      "type": "long"
+    },
+    {
+      "name": "first_at",
+      "type": {
+        "type": "long",
+        "logicalType": "timestamp-millis"
+      }
+    },
+    {
+      "name": "last_at",
+      "type": {
+        "type": "long",
+        "logicalType": "timestamp-millis"
+      }
+    },
+    {
+      "name": "transaction_count",
+      "type": "long"
+    }
+  ]
+}
